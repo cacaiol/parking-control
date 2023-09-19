@@ -86,4 +86,6 @@ public class ParkingSpotDto {
     public void setBlock(String block) {
         this.block = block;
     }
+
+    
 }

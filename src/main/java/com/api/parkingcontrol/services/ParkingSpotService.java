@@ -16,7 +16,7 @@ public class ParkingSpotService {
         this.parkingSpotRepository = parkingSpotRepository;
     }
 
-    @Transactional // SERVE PARA GARANTIR O ROLLBACK CASO ACONTEÇA ALGUM ERRO NO MÉTODO SAVE.
+    @Transactional
     public ParkingSpotModel save(ParkingSpotModel parkingSpotModel) {
         return parkingSpotRepository.save(parkingSpotModel);
     }
