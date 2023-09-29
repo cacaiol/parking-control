@@ -22,7 +22,7 @@ public class ParkingSpotService {
     public ParkingSpotModel save(ParkingSpotModel parkingSpotModel) {
         return parkingSpotRepository.save(parkingSpotModel);
     }
-    public boolean existsByLicensePlateCar(String licensePlateCar) {          //QUERY PARA VERIFICAR SE JÁ EXISTE AQUELA PLACA DE CARRO NO BD
+    public boolean existsByLicensePlateCar(String licensePlateCar) {
         return parkingSpotRepository.existsByLicensePlateCar(licensePlateCar);
     }
 
@@ -40,5 +40,9 @@ public class ParkingSpotService {
 
     public Optional<ParkingSpotModel> findById(UUID id) {
         return parkingSpotRepository.findById(id);
+    }
+    @Transactional
+    public void delete(ParkingSpotModel parkingSpotModel) {
+        parkingSpotRepository.delete(parkingSpotModel);
     }
 }
